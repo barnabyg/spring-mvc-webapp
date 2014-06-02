@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.blizzardtec.ui;
 
@@ -24,7 +24,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * @author Barnaby Golden
- * 
+ *
  */
 public final class LoginSteps {
 
@@ -52,7 +52,7 @@ public final class LoginSteps {
                         true);
 
         final File file = new File(
-                "C:\\docs\\workspace\\spring-mvc-webapp"
+                "C:\\docs\\git\\spring-mvc-webapp"
                         + "\\src\\test\\resources\\IEDriverServer.exe");
 
         System.setProperty("webdriver.ie.driver", file.getAbsolutePath());

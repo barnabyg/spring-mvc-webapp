@@ -13,14 +13,14 @@ import com.blizzardtec.model.Login;
 
 /**
  * @author Barnaby Golden
- * 
+ *
  */
 @Controller
 public final class MyController {
 
     /**
      * Request handler for home page.
-     * 
+     *
      * @return str
      */
     @RequestMapping(method = RequestMethod.GET, value = "/home")
@@ -30,7 +30,7 @@ public final class MyController {
 
     /**
      * Request handler for login page.
-     * 
+     *
      * @param m
      *            model
      * @return str
