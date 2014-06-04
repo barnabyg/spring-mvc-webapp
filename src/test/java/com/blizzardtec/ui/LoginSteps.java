@@ -89,7 +89,7 @@ public final class LoginSteps {
     @When("^the login button is clicked$")
     public void theLoginButtonIsClicked() throws Throwable {
 
-        final WebElement loginButton = driver.findElement(By.id("login"));
+        final WebElement loginButton = driver.findElement(By.id("submitId"));
 
         loginButton.sendKeys(Keys.ENTER);
 

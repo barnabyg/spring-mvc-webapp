@@ -15,7 +15,7 @@
 <table>
 <tr><td><form:input id="username" path="username" /></td></tr>
 <tr><td><form:input id="pwd" path="pwd" /></td></tr>
-<tr><td><input type="submit" id="login" value="Login" /></td></tr>
+<tr><td><input type="submit" id="submitId" value="Login" /></td></tr>
 </table>
 </form:form>
 
