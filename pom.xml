@@ -58,7 +58,7 @@
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<contextPath>/</contextPath>
 					<stopKey>foo</stopKey>
-					<stopPort>9999</stopPort>
+					<stopPort>9993</stopPort>
 				</configuration>
 				<executions>
 					<execution>
