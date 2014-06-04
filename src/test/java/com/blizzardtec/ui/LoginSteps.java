@@ -3,14 +3,11 @@
  */
 package com.blizzardtec.ui;
 
-import java.io.File;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,7 +16,6 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -43,23 +39,25 @@ public final class LoginSteps {
     @Before
     public void setUp() {
 
-        final DesiredCapabilities capabilities = DesiredCapabilities
-                .internetExplorer();
-        capabilities
-                .setCapability(
-                        InternetExplorerDriver
-                        .INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-                        true);
+//        final DesiredCapabilities capabilities = DesiredCapabilities
+//                .internetExplorer();
+//        capabilities
+//                .setCapability(
+//                        InternetExplorerDriver
+//                        .INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+//                        true);
+//
+//        final File file = new File(
+//                "C:\\docs\\git\\spring-mvc-webapp"
+//                        + "\\src\\test\\resources\\IEDriverServer.exe");
+//
+//        System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+//
+//        driver = new InternetExplorerDriver(capabilities);
 
-        final File file = new File(
-                "C:\\docs\\git\\spring-mvc-webapp"
-                        + "\\src\\test\\resources\\IEDriverServer.exe");
+        driver = new FirefoxDriver();
 
-        System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
-
-        driver = new InternetExplorerDriver(capabilities);
-
-        driver.get("http://localhost:8080/login.go");
+        driver.get("http://localhost:7070/login.go");
     }
 
     /**
