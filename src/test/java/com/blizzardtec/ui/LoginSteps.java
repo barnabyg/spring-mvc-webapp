@@ -57,7 +57,7 @@ public final class LoginSteps {
 
         driver = new FirefoxDriver();
 
-        driver.get("http://localhost:7070/login.go");
+        driver.get("http://localhost:7072/login.go");
     }
 
     /**

@@ -49,12 +49,10 @@
         <artifactId>jetty-maven-plugin</artifactId>
         <version>9.2.0.v20140526</version>
 				<configuration>
-          <connectors>
-            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-              <port>7070</port>
-              <maxIdleTime>60000</maxIdleTime>
-            </connector>
-          </connectors>
+          <httpConnector>
+            <port>7072</port>
+            <idleTimeout>60000</idleTimeout>
+          </httpConnector>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<contextPath>/</contextPath>
 					<stopKey>foo</stopKey>
