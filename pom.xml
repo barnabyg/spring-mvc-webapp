@@ -12,10 +12,11 @@
   </prerequisites>
 
   <properties>
-    <spring.version>4.0.5.RELEASE</spring.version>
+    <spring.version>4.1.3.RELEASE</spring.version>
     <cobertura.version>2.6</cobertura.version>
     <pmd.version>3.1</pmd.version>
     <checkstyle.version>2.12.1</checkstyle.version>
+    <selenium.version>2.44.0</selenium.version>
   </properties>
 
 	<build>
@@ -113,41 +114,43 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+
+      <plugin>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
-        <version>9.2.0.v20140526</version>
-				<configuration>
+        <version>9.2.1.v20140609</version>
+        <configuration>
           <httpConnector>
             <port>7072</port>
             <idleTimeout>60000</idleTimeout>
           </httpConnector>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-					<contextPath>/</contextPath>
-					<stopKey>foo</stopKey>
-					<stopPort>9993</stopPort>
-				</configuration>
-				<executions>
-					<execution>
-						<id>start-jetty</id>
-						<phase>pre-integration-test</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<scanIntervalSeconds>0</scanIntervalSeconds>
-							<daemon>true</daemon>
-						</configuration>
-					</execution>
-					<execution>
-						<id>stop-jetty</id>
-						<phase>post-integration-test</phase>
-						<goals>
-							<goal>stop</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+          <scanIntervalSeconds>0</scanIntervalSeconds>
+          <contextPath>/</contextPath>
+          <stopKey>foo</stopKey>
+          <stopPort>9992</stopPort>
+        </configuration>
+        <executions>
+          <execution>
+            <id>start-jetty</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <scanIntervalSeconds>0</scanIntervalSeconds>
+              <daemon>true</daemon>
+            </configuration>
+          </execution>
+          <execution>
+            <id>stop-jetty</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>stop</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
 		</plugins>
 	</build>
 
@@ -224,7 +227,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>2.42.2</version>
+			<version>${selenium.version}</version>
 		</dependency>
 	</dependencies>
 </project>
