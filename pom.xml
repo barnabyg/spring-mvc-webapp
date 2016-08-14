@@ -19,7 +19,7 @@
     <checkstyle.version>2.17</checkstyle.version>
     <spring.version>4.2.4.RELEASE</spring.version>
     <cucumber.version>1.2.4</cucumber.version>
-    <selenium.version>2.53.1</selenium.version>
+    <selenium.version>3.0.0-beta2</selenium.version>
     <surefire.version>2.19.1</surefire.version>
     <hibernate.version>4.3.10.Final</hibernate.version>
     <junit.version>4.12</junit.version>
@@ -250,5 +250,10 @@
 			<artifactId>selenium-java</artifactId>
 			<version>${selenium.version}</version>
 		</dependency>
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.0</version>
+    </dependency>
 	</dependencies>
 </project>

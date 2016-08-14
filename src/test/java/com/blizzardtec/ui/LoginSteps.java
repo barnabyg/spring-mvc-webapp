@@ -3,11 +3,13 @@
  */
 package com.blizzardtec.ui;
 
+import org.apache.commons.lang3.SystemUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -55,7 +57,19 @@ public final class LoginSteps {
 //
 //        driver = new InternetExplorerDriver(capabilities);
 
-        driver = new FirefoxDriver();
+        if (SystemUtils.IS_OS_WINDOWS) {
+            System.setProperty(
+              "webdriver.gecko.driver", "src/test/resources/wires.exe");
+        } else {
+            System.setProperty(
+              "webdriver.gecko.driver", "src/test/resources/wires");
+        }
+
+        final DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+
+        capabilities.setCapability("marionette", true);
+
+        driver = new FirefoxDriver(capabilities);
 
         driver.get("http://localhost:7072/login.go");
     }
