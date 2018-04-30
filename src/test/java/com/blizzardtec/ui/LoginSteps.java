@@ -9,7 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -41,22 +41,6 @@ public final class LoginSteps {
     @Before
     public void setUp() {
 
-//        final DesiredCapabilities capabilities = DesiredCapabilities
-//                .internetExplorer();
-//        capabilities
-//                .setCapability(
-//                        InternetExplorerDriver
-//                        .INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-//                        true);
-//
-//        final File file = new File(
-//                "C:\\docs\\git\\spring-mvc-webapp"
-//                        + "\\src\\test\\resources\\IEDriverServer.exe");
-//
-//        System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
-//
-//        driver = new InternetExplorerDriver(capabilities);
-
         if (SystemUtils.IS_OS_WINDOWS) {
             System.setProperty(
               "webdriver.gecko.driver", "src/test/resources/wires.exe");
@@ -65,11 +49,10 @@ public final class LoginSteps {
               "webdriver.gecko.driver", "src/test/resources/wires");
         }
 
-        final DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        final FirefoxOptions firefoxOptions = new FirefoxOptions();
+        firefoxOptions.setCapability("marionette", true);
 
-        capabilities.setCapability("marionette", true);
-
-        driver = new FirefoxDriver(capabilities);
+        driver = new FirefoxDriver(firefoxOptions);
 
         driver.get("http://localhost:7072/login.go");
     }

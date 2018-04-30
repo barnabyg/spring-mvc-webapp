@@ -10,7 +10,7 @@
 
 <body>
 
-<form:form method="post" commandName="login">
+<form:form method="post" modelAttribute="login">
 
 <table>
 <tr><td><form:input id="username" path="username" /></td></tr>

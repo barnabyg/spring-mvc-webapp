@@ -38,6 +38,11 @@
      <priority>5</priority>
   </rule>
 
+  <rule ref="category/java/design.xml/DataClass">
+     <priority>5</priority>
+  </rule>
+
+
   <!-- Here's some rules we'll specify one at a time -->
 <!--   <rule ref="rulesets/java/unusedcode.xml/UnusedLocalVariable"/> -->
 <!--   <rule ref="rulesets/java/unusedcode.xml/UnusedPrivateField"/> -->
