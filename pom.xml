@@ -25,24 +25,23 @@
     <junit.version>4.12</junit.version>
     <jetty.version>9.4.9.v20180320</jetty.version>
     <maven.version>3.5.2</maven.version>
-    <mavencompiler.version>3.7.0</mavencompiler.version>
+    <mavencompiler.version>3.8.0</mavencompiler.version>
     <java.target>1.10</java.target>
     <javadoc.version>3.0.0</javadoc.version>
   </properties>
 
 	<build>
 		<plugins>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
+        <version>${mavencompiler.version}</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-          <testSource>1.8</testSource>
-          <testTarget>1.8</testTarget>
+          <release>10</release>
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
